@@ -11,26 +11,11 @@ from polygon_client import RestClient
 This creates an object with the following functions:
 ```
 @static
-ts_to_datetime(timestamp)
-
-@static
-reset_raw_data_tables(engine, currency_pairs)
-
-@static
-initialize_raw_data_tables(engine, currency_pairs)
-
-@static
-initialize_aggregated_tables(engine, currency_pairs)
-
-@static
-aggregate_raw_data_tables(engine, currency_pairs)
-
-calculate(currency_pairs)
+fetch_key()
 ```
 
-calculate() is the main function of the library. After initializing the library object, you can call object.calculate(currency_pairs) to run the calculations on a currency pair and store into a sqlite database.
-
+To initialize the Polygon client, you can use the fetch_key() method to obtain the key provided by professor.
 ```
-client = RestClient()
-client.calculate(currency_pairs)
+key = RestClient.fetch_key()
+client = RESTClient(key)
 ```
